@@ -261,8 +261,8 @@ function TaskManager() {
                   </div>
                   <Button
                     variant="ghost"
-                    size="icon-sm"
-                    className="h-7 w-7 shrink-0 text-muted-foreground hover:text-destructive"
+                    size="sm"
+                    className="h-7 w-7 shrink-0 px-0 text-muted-foreground hover:text-destructive"
                     onClick={() => deleteTask(task.id)}
                   >
                     <Trash2 className="h-4 w-4" />
