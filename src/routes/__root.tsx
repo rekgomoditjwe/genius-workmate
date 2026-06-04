@@ -81,6 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ProductivityAI — AI-Powered Workplace Automation" },
       { name: "description", content: "Automate meeting summaries, email drafting, and task management with AI" },
+      { property: "og:title", content: "ProductivityAI — AI-Powered Workplace Automation" },
+      { name: "twitter:title", content: "ProductivityAI — AI-Powered Workplace Automation" },
+      { property: "og:description", content: "Automate meeting summaries, email drafting, and task management with AI" },
+      { name: "twitter:description", content: "Automate meeting summaries, email drafting, and task management with AI" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/480a4a47-1d9b-4e7e-b4eb-09c27f738046/id-preview-88caf191--57107f0d-ac2e-4f13-90a8-bc3dd68d1c79.lovable.app-1780561933109.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/480a4a47-1d9b-4e7e-b4eb-09c27f738046/id-preview-88caf191--57107f0d-ac2e-4f13-90a8-bc3dd68d1c79.lovable.app-1780561933109.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {
