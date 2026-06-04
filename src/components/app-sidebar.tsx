@@ -6,6 +6,7 @@ import {
   CheckSquare,
   Bot,
   Zap,
+  BookOpen,
 } from "lucide-react";
 import {
   Sidebar,
@@ -26,6 +27,7 @@ const items = [
   { title: "Meeting Summarizer", url: "/meetings", icon: FileText },
   { title: "Email Assistant", url: "/email", icon: Mail },
   { title: "Task Manager", url: "/tasks", icon: CheckSquare },
+  { title: "Research Assistant", url: "/research", icon: BookOpen },
   { title: "AI Assistant", url: "/assistant", icon: Bot },
 ];
 
