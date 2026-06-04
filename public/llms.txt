@@ -1,0 +1,22 @@
+# ProductivityAI
+
+> AI-powered workplace automation suite that helps professionals summarize meetings, draft emails, manage tasks, and get productivity coaching.
+
+ProductivityAI is a practical AI solution designed to enhance workplace productivity by automating common business tasks. It uses advanced language models through structured prompts to deliver reliable, actionable outputs while keeping users in full control.
+
+## Features
+
+- [Dashboard](/): Overview of productivity tools and quick access to all features
+- [Meeting Summarizer](/meetings): Paste meeting notes and get structured summaries with decisions, action items, and key topics
+- [Email Assistant](/email): Draft professional emails with selectable tones (professional, friendly, formal, urgent, casual)
+- [Task Manager](/tasks): Generate prioritized task lists from project descriptions with time estimates
+- [AI Assistant](/assistant): Conversational productivity coach for workflow optimization and workplace advice
+
+## Technology
+
+- React 19 with TanStack Start
+- Tailwind CSS v4 with custom blue corporate design system
+- AI SDK with Lovable AI Gateway (Gemini models)
+- Structured output via Zod schemas for reliable results
+- Local browser storage for task persistence
+- Server-side AI processing to protect API keys
