@@ -7,6 +7,7 @@ import {
   Clock,
   TrendingUp,
   ArrowRight,
+  BookOpen,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -35,6 +36,13 @@ const tools = [
     icon: CheckSquare,
     url: "/tasks",
     color: "bg-amber-50 text-amber-600",
+  },
+  {
+    title: "Research Assistant",
+    description: "Summarize articles, extract insights, and simplify complex topics for any audience.",
+    icon: BookOpen,
+    url: "/research",
+    color: "bg-rose-50 text-rose-600",
   },
   {
     title: "AI Assistant",

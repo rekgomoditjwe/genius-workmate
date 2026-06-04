@@ -131,3 +131,39 @@ export const productivityAssistant = createServerFn({ method: "POST" })
 
     return { response: result.text };
   });
+
+const ResearchInput = z.object({
+  topic: z.string().min(1).max(10000),
+  audience: z.enum(["executive", "technical", "general"]).default("general"),
+});
+
+export const researchTopic = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) => ResearchInput.parse(input))
+  .handler(async ({ data }) => {
+    const key = process.env.LOVABLE_API_KEY;
+    if (!key) throw new Error("AI service unavailable");
+
+    const gateway = createLovableAiGatewayProvider(key);
+    const { output } = await generateText({
+      model: gateway("google/gemini-3-flash-preview"),
+      output: Output.object({
+        schema: z.object({
+          summary: z.string(),
+          keyInsights: z.array(z.string()),
+          recommendations: z.array(z.string()),
+          simplifiedExplanation: z.string(),
+          furtherQuestions: z.array(z.string()),
+          caveats: z.string(),
+        }),
+      }),
+      system:
+        "You are an expert research analyst. Summarize topics, articles, or reports into clear insights. " +
+        "Adapt depth and vocabulary to the target audience. Provide a concise summary, 3-6 key insights, " +
+        "actionable recommendations, and a plain-language explanation a non-expert could follow. " +
+        "Always include 'caveats' noting limitations, potential bias, or where the user should verify with primary sources. " +
+        "Never fabricate statistics — if unsure, say so.",
+      prompt: `Audience: ${data.audience}\n\nResearch this topic or content and produce structured findings:\n\n${data.topic}`,
+    });
+
+    return output;
+  });
